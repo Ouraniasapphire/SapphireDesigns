@@ -1,0 +1,28 @@
+{
+  "name": "sapphire-designs",
+  "version": "1.0.0",
+  "description": "Sapphire Designs now on SolidJS",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite --host",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.7.2",
+    "vite": "^6.0.0",
+    "vite-plugin-solid": "^2.11.0"
+  },
+  "dependencies": {
+    "@solidjs/router": "^0.15.2",
+    "solid-js": "^1.9.3",
+    "vite-dev": "^0.0.1"
+  },
+  "main": "src/index.tsx",
+  "keywords": [
+    "App"
+  ],
+  "author": "Sapphire"
+}

@@ -1,0 +1,26 @@
+{
+    "sections": [
+      {
+        "id": 1,
+        "image": "./Sapphire-Designs.png",
+        "title": "Sapphire Designs",
+        "description": "The comapny designed logo."
+  
+      },
+      {
+        "id": 2,
+        "image": "./ULISEA.png",
+        "title": "ULISEA",
+        "description": "A concept logo to an AI language model program."
+  
+      },
+      {
+        "id": 3,
+        "image": "./QUBES.png",
+        "title": "QUBES",
+        "description": "Concept logo for a modular Linux distro. "
+  
+      }
+    ]
+
+    }
