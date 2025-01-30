@@ -3,17 +3,17 @@ import { JSX } from "solid-js";
 interface CardProps {
   children: JSX.Element;
   class?: string;
-  style?: JSX.CSSProperties; // style in SolidJS
+  style?: JSX.CSSProperties; 
   id?: string;
 }
 
+//Rework the card component styling
+
 const Card: (props: CardProps) => JSX.Element = (props) => {
   return (
-    <div class="glass-item fit-w fit-h shadow" style={"padding: 40px"}>
-      <div class={`card ${props.class || ""}`} style={props.style} id={props.id}>
+      <div class={`card ${props.class || ""} glass-item fit-h shadow `} style={{...props.style, padding: "40px"}} id={props.id}>
         {props.children}
       </div>
-    </div>
   );
 };
 

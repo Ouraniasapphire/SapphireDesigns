@@ -7,7 +7,6 @@
     height: 100%;
     
     max-width: 100vw;
-    max-height: 100%;
 
     overflow-y: auto;
     overflow-x: hidden;
@@ -15,15 +14,22 @@
 }
 
 
-.grid-container {
+.gallery-grid-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two columns per row */
+  grid-template-columns: repeat(auto-fit, minmax(512px, 1fr)); /* Adjust '150px' as needed */
   gap: 1rem; /* Spacing between items */
   padding: 1rem; /* Add padding around the grid */
   box-sizing: border-box; /* Include padding in size calculations */
-  align-items: stretch; /* Ensure items stretch to fill their cell height */
-  
 }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+  gap: 1rem; /* Spacing between items */
+  padding: 1rem; /* Add padding around the grid */
+  box-sizing: border-box; /* Include padding in size calculations */
+}
+
 
 .grid-container > * {
   min-height: 0; /* Allow items to shrink if necessary */
@@ -35,46 +41,38 @@
 }
 
 
-  #home-title {
-    display: flex; 
-    align-items: center; 
-    font-size: 4rem; 
-    color: #0084ff;
-  }
-  
-  #home-logo {
-    height: 256px;
-    width: auto;
-  }
+#home-title {
+  display: flex; 
+  align-items: center; 
+  font-size: 4rem; 
+  color: #0084ff;
+}
 
-  #space {
-    display: none;
-  }
+#home-logo {
+  height: 256px;
+  width: auto;
+}
 
+#space {
+  display: none;
+}
 
-  @media (max-width: 768px) {
-    .grid-container {
-        grid-template-columns: 1fr; /* Stack items vertically in one column */
-        justify-items: center
+#gallery-logo {
+  width: 256px;
+  height: 256px;
+}
 
-    }
+#Gallery-card {
+  min-height: 256px;
+  max-height: 256px;
 
-    #space {
-      display: inline;
-    }
+  min-width: 512px;
+  max-width: 512px;
 
-    .grid-container > :last-child:nth-child(odd) {
-        grid-column: span 1; /* No need to span both columns, only one exists */
-        justify-self: start; /* Adjust alignment if needed */
-    }
+  overflow-y: hidden !important;
+}
 
 
-    #home-logo {
-      height: 192px;
-    }
-  
-    #home-title{
-      text-align: center;
-      font-size: 2rem;
-    }
+#About-card {
+  max-width: 50vw;
 }

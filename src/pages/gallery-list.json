@@ -2,23 +2,47 @@
     "sections": [
       {
         "id": 1,
-        "image": "./Sapphire-Designs.png",
-        "title": "Sapphire Designs",
-        "description": "The comapny designed logo."
+        "image": "./Sapphire-Designs.png"
   
       },
       {
         "id": 2,
-        "image": "./ULISEA.png",
-        "title": "ULISEA",
-        "description": "A concept logo to an AI language model program."
+        "image": "./Example.png"
   
       },
       {
         "id": 3,
-        "image": "./QUBES.png",
-        "title": "QUBES",
-        "description": "Concept logo for a modular Linux distro. "
+        "image": "./Example2.png"
+  
+      },
+
+      {
+        "id": 4,
+        "image": "./Example3.png"
+  
+      },
+
+      {
+        "id": 5,
+        "image": "./Example4.png"
+  
+      },
+
+      {
+        "id": 6,
+        "image": "./Example5.png"
+  
+      },
+
+      {
+        "id": 7,
+        "image": "./Example6.png"
+  
+      },
+
+      {
+        "id": 8,
+        "image": "./Example7.png"
   
       }
     ]

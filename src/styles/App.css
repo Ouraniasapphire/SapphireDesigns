@@ -1,6 +1,7 @@
 @import "./layout.css";
 @import "./Navbar.css";
 @import "./Loader.css";
+@import "./Media.css";
 
 @font-face {
   font-family: "Arial Rounded MT Bold";
@@ -14,7 +15,6 @@ html, body, .app {
     margin: 0;
     padding: 0;
     height: 100vh; 
-    overflow-x: hidden;
     display: flex;
     flex-direction: column; 
   }
@@ -91,10 +91,4 @@ html, body, .app {
   -webkit-box-shadow: 0px 5px 25px -5px rgba(0, 132, 255, 0.25) !important;
   -moz-box-shadow: 0px 5px 25px -5px rgba(0, 132, 255, 0.25) !important;
   box-shadow: 0px 5px 25px -5px rgba(0, 132, 255, 0.25) !important;
-}
-
-@media (max-width: 768px) { 
-  .glass-item {
-    border-radius: 2rem;
-  }
 }
