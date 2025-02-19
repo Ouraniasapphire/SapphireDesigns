@@ -26,7 +26,7 @@ const Gallery = () => {
   );
 
   return (
-    <div class="grid-container" style={"justify-items: center"}>
+    <div class="gallery-grid-container" style={"justify-items: center"}>
       <For each={dataState().sections}>{renderSection}</For>
     </div>
   );
