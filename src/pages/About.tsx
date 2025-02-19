@@ -4,9 +4,9 @@ import Card from '../components/Card';
 const About: Component = () => {
     return (
         <>
-            <div class="container">
-                <Card id="About-card">
-                    <span style="text-align: center;">
+            <div class="centered-container">
+                <Card id='about-pricing-card' >
+                    <span style="text-align: center; overflow-y: auto;">
                         <h1 style={"color: #0084FF "}>Sapphire Designs</h1>
                         <br />
                         <p> Sapphire Designs is an independent design company. </p>

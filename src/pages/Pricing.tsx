@@ -4,16 +4,18 @@ import Card from '../components/Card';
 const Pricing: Component = () => {
     return (
         <>
-            <div class="container"> 
-                <div class="grid-container" style={"justify-items: center"}>
-                    <Card style={{"text-align": "center", "justify-items": "center", width: "25vw"}}>
-                        <h1 style={"color: #0084FF"}> Standard Logo </h1>
-                        <img src="/Ratio.png" id="home-logo" alt="Ratio-Logo"/>
-                        <h1> $49.99 USD </h1>
-                        <h2 >£40.99 GBP</h2>
-                    </Card>
+            <div class="centered-container"> 
+                
+                <Card style={{"text-align": "center", "justify-items": "center"}} id='about-pricing-card'>
+                    <h1 style={"color: #0084FF"}> Standard Logo </h1>
 
-                </div>
+                    <div class="grid-item-container" style="align-items: center; justify-items: center;">
+                        
+                        <img src="/Ratio.png" id="home-logo" alt="Ratio-Logo"/>
+                        <span id="pricing-title"> $49.99 USD <br /> £40.99 GBP</span>
+                    </div>
+
+                </Card>
             </div>
         </>
     )

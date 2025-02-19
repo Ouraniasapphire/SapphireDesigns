@@ -10,6 +10,7 @@ import NotFound from './pages/NotFound'
 import Pricing from './pages/Pricing';
 import Gallery from './pages/Gallery';
 import About from './pages/About';
+import Debug from './pages/Debug';
 
 const root = document.getElementById('root');
 
@@ -26,6 +27,7 @@ render(
       <Route path="/pricing" component={Pricing} />
       <Route path="/about" component={About} />
       <Route path="/gallery" component={Gallery} />
+      <Route path="/debug" component={Debug} />
       <Route path="*paramName" component={NotFound} />
     </Router>
   ), root!

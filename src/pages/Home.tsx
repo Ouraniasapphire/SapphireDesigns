@@ -4,11 +4,11 @@ import Card from '../components/Card';
 const Home: Component = () => {
     return (
         <>
-            <div class="container">
+            <div class="centered-container">
                 <Card >
-                    <div class="grid-container">
+                    <div class="grid-item-container" style="align-items: center; justify-items: center;">
                         <img src="/Sapphire-Designs.png" alt="logo" id="home-logo"/> 
-                        <span id="home-title"> Sapphire <br /> Designs </span>
+                        <span id="home-title">Sapphire<br/>Designs</span>
                     </div>
                 </Card>
             </div>

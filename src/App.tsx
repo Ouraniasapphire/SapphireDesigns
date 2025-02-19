@@ -36,8 +36,8 @@ const App = (props) => {
           <Loading />
         </Show>
 
-        <div class="app">
 
+        <div class="app background">
           <nav class="navbar ">
             <div class="navbar-container">
               <div class="navbar-left">

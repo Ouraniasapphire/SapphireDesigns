@@ -44,6 +44,15 @@
         "id": 8,
         "image": "./Example7.png"
   
+      },
+      {
+        "id": 9,
+        "image": "./Example8.png"
+  
+      },
+      {
+        "id": 10,
+        "image": "./Example9.png"
       }
     ]
 
