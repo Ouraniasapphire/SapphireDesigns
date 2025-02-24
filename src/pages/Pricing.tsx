@@ -6,7 +6,7 @@ const Pricing: Component = () => {
         <>
             <div class="centered-container"> 
                 
-                <Card style={{"text-align": "center", "justify-items": "center"}} id='about-pricing-card'>
+                <Card style={{"text-align": "center", "justify-items": "center"}} id='card'>
                     <h1 style={"color: #0084FF"}> Standard Logo </h1>
 
                     <div class="grid-item-container" style="align-items: center; justify-items: center;">

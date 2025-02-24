@@ -1,6 +1,7 @@
 @import "./Navbar.css";
 @import "./Loader.css";
 
+/* App */
 @font-face {
   font-family: "Arial Rounded MT Bold";
   src: url('./arialroundedmtbold.ttf');
@@ -17,17 +18,7 @@ html, body, .app {
     flex-direction: column;
 }
 
-.centered-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100%;
-  max-width: 100vw;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-
+/* Background image styling */
 .background {
     flex: 1;
     overflow-y: auto;
@@ -52,6 +43,7 @@ html, body, .app {
     pointer-events: none;
 }
 
+/* Components */
 .glass-item {
     z-index: 1;
     background: rgba(255, 255, 255, 0.85);
@@ -67,14 +59,16 @@ html, body, .app {
     border-radius: 4rem;
 }
 
-.gallery-grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(512px, 1fr));
-  gap: 1rem;
-  padding: 1rem;
-  box-sizing: border-box;
-  width: 100%;
-  max-width: 100%;
+/* Containers */
+.centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100%;
+  max-width: 100vw;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .grid-item-container {
@@ -94,6 +88,8 @@ html, body, .app {
   justify-self: center;
 }
 
+/* Custom elements */
+
 #pricing-title {
   display: flex;
   align-items: center;
@@ -112,21 +108,13 @@ html, body, .app {
   width: auto;
 }
 
-#space {
-  display: none;
-}
-
 #gallery-logo {
   width: 256px;
   height: 256px;
 }
 
-.fit-w {
-  width: fit-content;
-}
-
-.fit-h {
-  height: fit-content;
+#space {
+  display: none;
 }
 
 .shadow {
@@ -137,26 +125,19 @@ html, body, .app {
 }
 
 @media (max-width: 768px) {
-  #about-pricing-card {
-      width: 100%;
-      
+  
+  /* Components */
+  .glass-item {
+    border-radius: 2rem;
+    width: 65%;
+    max-width: 65%;
   }
 
-  #gallery-title {
-      font-size: 2.5rem !important;
-  }
-
-  #space {
-      display: block;
-      margin: 1rem;
-  }
-
-  .gallery-grid-container {
-      display: inline;
-  }
+  /* Containers */
 
   .grid-item-container {
-      display: block;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
       gap: 1rem;
       padding: 1rem;
       box-sizing: border-box;
@@ -167,17 +148,25 @@ html, body, .app {
       justify-self: start;
   }
 
+  /* Custom Elements */
+
   #home-logo {
       height: 192px;
   }
 
   #home-title {
       font-size: 2rem;
+      justify-content: center;
   }
 
   #pricing-title {
       font-size: 2rem;
   }
+
+  #space {
+    display: block;
+    margin: 1rem;
+}
 
   /* Navbar */
   .navbar #Name {
@@ -190,9 +179,5 @@ html, body, .app {
   #Logo {
       width: 256px;
       height: 256px;
-  }
-
-  .glass-item {
-      border-radius: 2rem;
   }
 }
