@@ -37,7 +37,7 @@ const App = (props) => {
         </Show>
 
 
-        <div class="app background">
+        <main class="app background">
           <nav class="navbar ">
             <div class="navbar-container">
               <div class="navbar-left">
@@ -55,7 +55,7 @@ const App = (props) => {
 
           {props.children}
 
-        </div>
+        </main>
       </Suspense>
     </>
   );
