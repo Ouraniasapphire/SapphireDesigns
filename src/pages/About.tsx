@@ -38,9 +38,9 @@ const About: Component = () => {
                         <p style="max-width: 256px"> Sapphire Designs is an independent design company. </p>
                         <p style="max-width: 256px"> We operate with cheap prices and high efficiency. </p>
                     </div>
-                    <h2 style="color: #0084FF; margin-top: 16px; cursor: pointer; user-select: all; touch-action: manipulation;" onclick={copyEmail}>
+                    <h3 style="color: #0084FF; margin-top: 16px; cursor: pointer; user-select: all; touch-action: manipulation font-size: 1.5rem !important;" onclick={copyEmail}>
                         sapphire@sapphire-designs.net
-                    </h2>
+                    </h3>
                     {copied() && <p style="color: #0084FF; font-size: 14px;">Copied to clipboard!</p>}
                 </div>
             </Card>
