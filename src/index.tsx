@@ -6,7 +6,7 @@ import { lazy, createSignal, createEffect, Show, Suspense } from "solid-js";
 
 import App from './App';
 import Home from './pages/Home';
-import NotFound from './pages/NotFound'
+import NotFound from './pages/404'
 import Pricing from './pages/Pricing';
 import Gallery from './pages/Gallery';
 import About from './pages/About';
