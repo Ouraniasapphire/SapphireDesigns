@@ -28,7 +28,7 @@ render(
       <Route path="/about" component={About} />
       <Route path="/gallery" component={Gallery} />
       <Route path="/debug" component={Debug} />
-      <Route path="*paramName" component={NotFound} />
+      <Route path="*" component={NotFound} />
     </Router>
   ), root!
 

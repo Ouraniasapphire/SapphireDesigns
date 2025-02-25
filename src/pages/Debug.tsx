@@ -2,7 +2,7 @@ import type { Component } from 'solid-js';
 import { createSignal, onCleanup } from 'solid-js';
 
 const Debug: Component = () => {
-    const [log, setLog] = createSignal<string[]>(["Processing Information..."]); // Fake log
+    const [log, setLog] = createSignal<string[]>(["Processing Information..."]); 
     const userAgent = window.navigator.userAgent;
     const viewportWidth = window.innerWidth;
     const viewportHeight = window.innerHeight;
@@ -44,11 +44,8 @@ const Debug: Component = () => {
 
     return (
         <div style={{
-            "background-color": "black", 
-            "color": "#39ff14", 
-            "font-family": "monospace",
+            "color": "#0f52ba", 
             "padding": "20px",
-            "border-radius": "5px",
             "white-space": "pre-line",
             "overflow": "auto",
             "height": "100vh",
@@ -56,8 +53,9 @@ const Debug: Component = () => {
             
             <br />
             <div>
+                <h1>Debug Information</h1>
                 {log().map(line => (
-                    <div style="margin: 1rem"> {line} </div>
+                    <div style="margin: 1rem"> - {line} </div>
                     
                 ))}
             </div>
