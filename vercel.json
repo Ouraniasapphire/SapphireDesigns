@@ -1,5 +1,6 @@
 {
   "routes": [
-    { "src": "/(.*)", "dest": "/src/index.tsx" }
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/src/index.tsx", "status": 404 }
   ]
 }
