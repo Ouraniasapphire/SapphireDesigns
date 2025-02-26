@@ -18,7 +18,7 @@ const Gallery = () => {
         <img
           src={`${section.image}`}
           alt={`image-${section.id}`}
-          id="gallery-logo"
+          id="card-image"
         />
       </Card>
       <br id="space" > </br>

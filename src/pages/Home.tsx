@@ -7,7 +7,7 @@ const Home: Component = () => {
             <div class="centered-container">
                 <Card >
                     <div class="grid-item-container" style="align-items: center; justify-items: center;">
-                        <img src="/Sapphire-Designs.png" alt="logo" id="home-logo"/> 
+                        <img src="/Sapphire-Designs.png" alt="logo" id="card-image"/> 
                         <span id="home-title">Sapphire<br/>Designs</span>
                     </div>
                 </Card>

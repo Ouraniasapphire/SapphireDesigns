@@ -11,7 +11,7 @@ const Pricing: Component = () => {
 
                     <div class="grid-item-container" style="align-items: center; justify-items: center;">
                         
-                        <img src="/Ratio.png" id="home-logo" alt="Ratio-Logo"/>
+                        <img src="/Ratio.png" id="card-image" alt="Ratio-Logo"/>
                         <span id="pricing-title"> $49.99 USD <br /> £40.99 GBP</span>
                     </div>
 

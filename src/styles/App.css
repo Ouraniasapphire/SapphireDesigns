@@ -103,12 +103,7 @@ html, body, .app {
   color: #0084ff;
 }
 
-#home-logo {
-  height: 256px;
-  width: auto;
-}
-
-#gallery-logo {
+#card-image {
   width: 256px;
   height: 256px;
 }
@@ -151,8 +146,9 @@ html, body, .app {
 
   /* Custom Elements */
 
-  #home-logo {
+  #card-image {
       height: 192px;
+      width: 192px
   }
 
   #home-title {
@@ -175,6 +171,15 @@ html, body, .app {
       align-items: center;
       justify-content: center;
   }
+
+  .navbar {
+    position: fixed;
+    bottom: 0;
+  }
+
+
+
+
 
   /* Loading logo */
   #Logo {
