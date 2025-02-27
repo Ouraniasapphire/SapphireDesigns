@@ -14,7 +14,7 @@ const Gallery = () => {
   // Render section items
   const renderSection = (section) => (
     <>
-      <Card  style={{ display: "flex", "align-items": "center", "justify-content": "center"}} id="G-card-log">
+      <Card  style={{ display: "flex", "align-items": "center", "justify-content": "center"}} id="gallery-card">
         <img
           src={`${section.image}`}
           alt={`image-${section.id}`}

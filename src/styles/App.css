@@ -121,6 +121,10 @@ html, body, .app {
 }
 
 @media (max-width: 768px) {
+
+  .centered-container {
+    height: calc(100vh - 3rem);
+  }
   
   /* Components */
   .glass-item {
@@ -128,6 +132,12 @@ html, body, .app {
     width: 65%;
     max-width: 65%;
   }
+
+  #gallery-card {
+    width: fit-content !important
+  }
+
+
 
   /* Containers */
 
