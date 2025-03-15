@@ -7,7 +7,7 @@ export default function NewsTest() {
 
   const sendNewsletter = async () => {
     setMessage("Sending...");
-    const response = await fetch("http://localhost:3001/send-newsletter", {
+    const response = await fetch("/send-newsletter", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ title: title(), content: content() }),
