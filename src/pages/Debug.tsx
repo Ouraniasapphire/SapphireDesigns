@@ -46,7 +46,7 @@ const Debug: Component = () => {
         <div style={{
             "color": "#0f52ba", 
             "padding": "20px",
-            "white-space": "pre-line",
+            "white-spacer": "pre-line",
             "overflow": "auto",
             "height": "100vh",
         }}>

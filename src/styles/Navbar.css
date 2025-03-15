@@ -22,22 +22,30 @@
   display: flex;
   justify-content: space-between; /* Ensures left and right sections are far apart */
   align-items: center;
+  height: 100%;
 }
 
 .navbar-left {
   display: flex;
   align-items: center;
+  height: 100%;
 }
 
 .navbar-right {
   display: flex;
   align-items: center;
-  height: 100%; /* Consistent height with the navbar */
+  height: 100%; 
 }
 
 
   
   .navbar a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: fit-content;
+
     color: black;
     text-decoration: none;
     font-size: 16px;

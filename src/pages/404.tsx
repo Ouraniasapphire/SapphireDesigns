@@ -4,7 +4,7 @@ import Card from '../components/Card';
 const NotFound: Component = () => {
     return (
         <>
-            <div class="centered-container">
+            <div class="center-content">
                 <Card >
 
                     <span style={"text-align: center;"}>

@@ -18,15 +18,15 @@ const Gallery = () => {
         <img
           src={`${section.image}`}
           alt={`image-${section.id}`}
-          id="card-image"
+          id="image-card"
         />
       </Card>
-      <br id="space" > </br>
+      <br id="spacer" > </br>
     </>
   );
 
   return (
-    <div class="grid-item-container" style={"justify-items: center"}>
+    <div class="grid-layout" id="gallery-grid" style={"justify-items: center"}>
       <For each={dataState().sections}>{renderSection}</For>
     </div>
   );
