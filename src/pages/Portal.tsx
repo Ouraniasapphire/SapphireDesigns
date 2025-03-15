@@ -4,8 +4,6 @@ import { createClient } from '@supabase/supabase-js';
 import { useNavigate } from '@solidjs/router';
 import Card from '../components/Card';
 
-import NewsTest from './NewsTest';
-
 const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_KEY);
 
 const Portal: Component = () => {
@@ -83,7 +81,6 @@ const Portal: Component = () => {
                             </div>
                         </div>
                     </div>
-                    <NewsTest />
                 </div>
             </Card>
         </div>
