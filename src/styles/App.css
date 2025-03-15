@@ -339,4 +339,8 @@ html, body, .app {
       width: 256px;
       height: 256px;
   }
+
+  #gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(274px, 1fr)) !important;
+  }
 }
