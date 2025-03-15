@@ -42,7 +42,11 @@ const About: Component = () => {
             })
 
             if (error) {
-                alert("Email field is blank or invalid.")
+                alert(error)
+            }
+
+            else {
+                alert("Email entered! Check your email for confirmation")
             }
 
         }
@@ -54,8 +58,8 @@ const About: Component = () => {
                 <form class="auth-container"onSubmit={(e) => SignUp(e)}>
                     <h3> Sign up for the newsletter!</h3>
                     <span class="form-wrapper form">
-                        <input class=" box-shadow flex" type="email" onChange={(e)=>setEmail(e.target.value)}></input>
-                        <button class=" box-shadow flex"  style="width: 5rem !important"type="submit"><span class="center"><img src="svgs/mail.svg" class="icon" alt="Vercel"/></span></button>
+                        <input class=" box-shadow flex" id="about-input" type="email" onChange={(e)=>setEmail(e.target.value)}></input>
+                        <button class=" box-shadow flex" id="about-button"  style="width: 5rem !important"type="submit"><span class="center"><img src="svgs/mail.svg" class="icon" alt="Vercel"/></span></button>
                     </span>
                 </form>
             </div>

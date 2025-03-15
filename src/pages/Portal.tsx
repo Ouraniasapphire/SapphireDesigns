@@ -4,6 +4,8 @@ import { createClient } from '@supabase/supabase-js';
 import { useNavigate } from '@solidjs/router';
 import Card from '../components/Card';
 
+import NewsletterForm from './NewsLetterForm';
+
 const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_KEY);
 
 const Portal: Component = () => {
@@ -58,12 +60,16 @@ const Portal: Component = () => {
                                 <span class="left">Github</span>
                                 <span class="right"><img src="svgs/github.svg" class="icon" alt="Github"/></span>
                             </button> <br />
-                            <button class="box-shadow flex" onClick={() => handleClick("https://account.squarespacer.com")}>
-                                <span class="left">Squarespacer</span> 
-                                <span class="right"><img src="svgs/squarespacer.svg" class="icon" alt="Squarespacer"/></span>
+                            <button class="box-shadow flex" onClick={() => handleClick("https://account.squarespace.com")}>
+                                <span class="left">Squarespace</span> 
+                                <span class="right"><img src="svgs/squarespace.svg" class="icon" alt="Squarespace"/></span>
                             </button> <br />
                             <button class="box-shadow flex" onClick={() => handleClick("https://wakatime.com/dashboard")}>
                                 <span class="left">Wakatime</span>
+                                <span class="right"><img src="svgs/wakatime.svg" class="icon" alt="Wakatime"/></span>
+                            </button> <br />
+                            <button class="box-shadow flex" onClick={() => handleClick("https://mailadmin.zoho.com/cpanel/home.do#dashboard")}>
+                                <span class="left">Zoho</span>
                                 <span class="right"><img src="svgs/wakatime.svg" class="icon" alt="Wakatime"/></span>
                             </button> <br />
                         </div>
@@ -77,6 +83,7 @@ const Portal: Component = () => {
                             </div>
                         </div>
                     </div>
+                    <NewsletterForm />
                 </div>
             </Card>
         </div>

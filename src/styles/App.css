@@ -181,7 +181,8 @@ html, body, .app {
 }
 
 .form input,
-.form button {
+.form button,
+.form textarea {
   padding: 0;
   background-color: white;
   border: solid 2px #8fbcff80;
@@ -252,12 +253,12 @@ html, body, .app {
     height: 100dvh;
   }
 
-  .form input {
+  #about-input {
     border-radius: 2rem 0 0 2rem;
     border-right: none;
   }
 
-  .form button {
+  #about-button {
     border-radius: 0 2rem 2rem 0;
     width: calc(3rem + 5px )
   }

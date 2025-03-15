@@ -13,6 +13,8 @@ import About from './pages/About';
 import Debug from './pages/Debug';
 import Login from './pages/Login'
 import Portal from './pages/Portal'
+import NewsletterForm from './pages/NewsLetterForm'
+import Confirmation from './pages/confirmation'
 
 const root = document.getElementById("root");
 const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_KEY);
@@ -29,6 +31,7 @@ render(
       <Route path="/about" component={About} />
       <Route path="/gallery" component={Gallery} />
       <Route path="/debug" component={Debug} />
+      <Route path="/confirmation" component={Confirmation} />
       <Route path="*" component={NotFound} />
 
       <SupabaseProvider client={supabase}>
