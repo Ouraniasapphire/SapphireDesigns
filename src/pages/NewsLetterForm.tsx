@@ -11,7 +11,7 @@ export default function NewsletterForm() {
     // Dynamically determine the URL depending on the environment (local or production)
     const apiUrl =
       process.env.NODE_ENV === "production"
-        ? "sapphire-designs-website-hlvqvt1cv-sapphired89s-projects.vercel.app"
+        ? "https://sapphire-designs-website-hlvqvt1cv-sapphired89s-projects.vercel.app/send-newsletter"
         : "http://localhost:3001/send-newsletter";
 
     try {
