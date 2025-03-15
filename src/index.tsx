@@ -13,7 +13,6 @@ import About from './pages/About';
 import Debug from './pages/Debug';
 import Login from './pages/Login'
 import Portal from './pages/Portal'
-import NewsletterForm from './pages/NewsLetterForm'
 import Confirmation from './pages/Confirmation'
 
 const root = document.getElementById("root");

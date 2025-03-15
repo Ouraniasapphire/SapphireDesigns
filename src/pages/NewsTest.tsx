@@ -1,36 +1,26 @@
 import { createSignal } from "solid-js";
 
-export default function NewsletterForm() {
+export default function NewsTest() {
   const [title, setTitle] = createSignal("");
   const [content, setContent] = createSignal("");
   const [message, setMessage] = createSignal("");
 
   const sendNewsletter = async () => {
     setMessage("Sending...");
+    const response = await fetch("http://localhost:3001/send-newsletter", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ title: title(), content: content() }),
+    });
 
-    // Dynamically determine the URL depending on the environment (local or production)
-    const apiUrl =
-      process.env.NODE_ENV === "production"
-        ? "https://sapphire-designs.net/send-newsletter"
-        : "http://localhost:3001/send-newsletter";
-
-    try {
-      const response = await fetch(apiUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ title: title(), content: content() }),
-      });
-
-      const result = await response.text();
-      setMessage(result);
-    } catch (err) {
-      console.error("❌ Error:", err);
-      setMessage("Failed to send the newsletter.");
-    }
+    const result = await response.text();
+    setMessage(result);
   };
 
   return (
-    <div class="grid-layout form">
+    <div class="p-6 bg-gray-100 rounded-lg shadow-md w-full max-w-lg mx-auto">
+      <h2 class="text-xl font-bold mb-4">Send Newsletter</h2>
+
       <input
         type="text"
         placeholder="Newsletter Title"
