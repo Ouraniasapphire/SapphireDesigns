@@ -14,7 +14,7 @@ import Debug from './pages/Debug';
 import Login from './pages/Login'
 import Portal from './pages/Portal'
 import NewsletterForm from './pages/NewsLetterForm'
-import Confirmation from './pages/confirmation'
+import Confirmation from './pages/Confirmation'
 
 const root = document.getElementById("root");
 const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_KEY);
