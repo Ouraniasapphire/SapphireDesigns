@@ -32,39 +32,40 @@ const About: Component = () => {
 
     const RegisterEmail: Component = () => {
         const [email, setEmail] = createSignal("");
-        const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_KEY, );
+        const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_KEY);
 
-        const SignUp = async(e) => {
-            e.preventDefault(e);
-            const {data, error} = await supabase.auth.signUp({
-                email: email(),
-                password: 'password',
-            })
+        const handleSubmit = async (e) => {
+            e.preventDefault();
+            const { data, error } = await supabase
+                .from('newsletter_emails')
+                .insert([{ email: email() }]);
 
             if (error) {
-                alert(error)
+                alert("Error submitting email: " + error.message);
+            } else {
+                alert("Email submitted successfully!");
+                setEmail(""); // Clear the input field
             }
+        };
 
-            else {
-                alert("Email entered! Check your email for confirmation")
-            }
-
-        }
-
-        return(
-            <div > 
+        return (
+            <div>
                 <br />
-                <div class="horizontal-divider"/>
-                <form class="auth-container"onSubmit={(e) => SignUp(e)}>
-                    <h3> Sign up for the newsletter!</h3>
+                <div class="horizontal-divider" />
+                <form class="auth-container" onSubmit={handleSubmit}>
+                    <h3>Sign up for the newsletter!</h3>
                     <span class="form-wrapper form">
-                        <input class=" box-shadow flex" id="about-input" type="email" onChange={(e)=>setEmail(e.target.value)}></input>
-                        <button class=" box-shadow flex" id="about-button"  style="width: 5rem !important"type="submit"><span class="center"><img src="svgs/mail.svg" class="icon" alt="Vercel"/></span></button>
+                        <input class="box-shadow flex" id="about-input" type="email" value={email()} onInput={(e) => setEmail(e.target.value)} required />
+                        <button class="box-shadow flex" id="about-button" style="width: 5rem !important" type="submit">
+                            <span class="center">
+                                <img src="svgs/mail.svg" class="icon" alt="Vercel" />
+                            </span>
+                        </button>
                     </span>
                 </form>
             </div>
-        )
-    }
+        );
+    };
 
     return (
         <div class="center-content">
