@@ -28,15 +28,21 @@ const Portal: Component = () => {
         const newTab = window.open(url, "_blank");
         if (newTab) newTab.focus();};
 
-    const fetchUsers = async () => {
-        const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SERVICE_ROLE_KEY )
+    const fetchEmails = async () => {
+    const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_KEY);
+    const { data, error } = await supabase
+        .from('newsletter_emails')
+        .select('email');
 
-        const { data, error } = await supabase.auth.admin.listUsers();
-        if (error) { console.error('Error fetching auth users:', error); return [];
-        }
-        return data.users.map(user => user.email); }
-    
-    const [emails] = createResource(fetchUsers);  
+    if (error) {
+        console.error('Error fetching newsletter emails:', error);
+        return [];
+    }
+    return data.map((row) => row.email);
+    };
+
+    const [emails] = createResource(fetchEmails);
+
 
     return (
         <div class="center-content">
