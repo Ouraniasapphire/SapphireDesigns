@@ -5,7 +5,7 @@ import { createClient } from "@supabase/supabase-js";
 import Card from "../components/Card";
 
 const Login: Component = () => {
-    const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_KEY, );
+    const supabase = createClient(import.meta.env.SUPABASE_URL, import.meta.env.SUPABASE_KEY, );
     const navigate = useNavigate();
     const [email, setEmail] = createSignal("")
     const [password, setPassword] = createSignal("")

@@ -6,7 +6,7 @@ import Card from '../components/Card';
 
 import Newsletter from './Newsletter';
 
-const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_KEY);
+const supabase = createClient(import.meta.env.SUPABASE_URL, import.meta.env.SUPABASE_KEY);
 
 const Portal: Component = () => {
     const navigate = useNavigate(); // Move inside the component
@@ -28,20 +28,20 @@ const Portal: Component = () => {
         const newTab = window.open(url, "_blank");
         if (newTab) newTab.focus();};
 
-    const fetchEmails = async () => {
-    const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_KEY);
-    const { data, error } = await supabase
-        .from('newsletter_emails')
-        .select('email');
+const fetchEmails = async () => {
+  const supabase = createClient(import.meta.env.SUPABASE_URL, import.meta.env.SUPABASE_KEY);
+  const { data, error } = await supabase
+    .from('newsletter_emails')
+    .select('email');
 
-    if (error) {
-        console.error('Error fetching newsletter emails:', error);
-        return [];
-    }
-    return data.map((row) => row.email);
-    };
+  if (error) {
+    console.error('Error fetching newsletter emails:', error);
+    return [];
+  }
+  return data.map((row) => row.email);
+};
 
-    const [emails] = createResource(fetchEmails);
+const [emails] = createResource(fetchEmails);
 
 
     return (
@@ -76,7 +76,7 @@ const Portal: Component = () => {
                             </button> <br />
                             <button class="box-shadow flex" onClick={() => handleClick("https://mailadmin.zoho.com/cpanel/home.do#dashboard")}>
                                 <span class="left">Zoho</span>
-                                <span class="right"><img src="svgs/wakatime.svg" class="icon" alt="Wakatime"/></span>
+                                <span class="right"><img src="svgs/zoho.svg" class="icon" alt="Zoho"/></span>
                             </button> <br />
                         </div>
                     </div>
@@ -90,6 +90,7 @@ const Portal: Component = () => {
                         </div>
                     </div>
                 </div>
+                <div class="horizontal-divider"/>
                 <Newsletter />
             </Card>
         </div>

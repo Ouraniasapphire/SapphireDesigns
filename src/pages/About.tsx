@@ -32,7 +32,7 @@ const About: Component = () => {
 
     const RegisterEmail: Component = () => {
         const [email, setEmail] = createSignal("");
-        const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_KEY);
+        const supabase = createClient(import.meta.env.SUPABASE_URL, import.meta.env.SUPABASE_KEY);
 
         const handleSubmit = async (e) => {
             e.preventDefault();

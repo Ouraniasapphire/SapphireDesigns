@@ -1,34 +1,48 @@
-## Usage
 
-Those templates dependencies are maintained via [pnpm](https://pnpm.io) via `pnpm up -Lri`.
+# Sapphire Designs
 
-This is the reason you see a `pnpm-lock.yaml`. That being said, any package manager will work. This file can be safely be removed once you clone a template.
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+
+## Usage/Examples
 
 ```bash
-$ npm install # or pnpm install or yarn install
+$ npm i
 ```
 
-### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
+
+## Environment Variables
+
+To run this project, add the following environment variables to your .env file
+
+
+```env
+SUPABASE_KEY=SUPABASE API KEY
+
+SUPABASE_URL=SUPABASE APP URL
+
+ZOHO_EMAIL=ZOHO EMAIL
+
+ZOHO_PASS=ZOHO APP PASSWORD
+
+```
+
+
 
 ## Available Scripts
 
-In the project directory, you can run:
-
 ### `npm run dev` or `npm start`
 
-Runs the app in the development mode.<br>
+Runs the app in the development mode.  
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br>
-
 ### `npm run build`
-
-Builds the app for production to the `dist` folder.<br>
-It correctly bundles Solid in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+Builds the app for production to the `dist` folder.  
+The build is minified and the filenames include the hashes.
 
 ## Deployment
 
-You can deploy the `dist` folder to any static host provider (netlify, surge, now, etc.)
+You can deploy the `dist` folder.
+

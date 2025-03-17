@@ -5,7 +5,7 @@ const Newsletter: Component = () => {
     const [title, setTitle] = createSignal('');
     const [htmlContent, setHtmlContent] = createSignal('');
     const [loading, setLoading] = createSignal(false);
-    const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_KEY);
+    const supabase = createClient(import.meta.env.SUPABASE_URL, import.meta.env.SUPABASE_KEY);
 
     const handleSendEmail = async () => {
         setLoading(true);
@@ -66,7 +66,7 @@ const Newsletter: Component = () => {
                     value={title()}
                     onInput={(e) => setTitle(e.target.value)}
                     placeholder="Enter email title" />
-                <button onClick={handleSendEmail} disabled={loading()}>
+                <button class="center" onClick={handleSendEmail} disabled={loading()}>
                     {loading() ? 'Sending...' : 'Send Email'}
                 </button>
             </span>

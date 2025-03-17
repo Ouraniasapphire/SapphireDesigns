@@ -222,6 +222,9 @@ html, body, .app {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 1rem;
+  color: #0084FF;
+  font-family: "Arial Rounded MT Bold";
 }
 
 .form button .right {
