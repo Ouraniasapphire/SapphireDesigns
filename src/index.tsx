@@ -15,7 +15,7 @@ import Login from './pages/Login'
 import Portal from './pages/Portal'
 
 const root = document.getElementById("root");
-const supabase = createClient(import.meta.env.SUPABASE_URL, import.meta.env.SUPABASE_KEY);
+const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_KEY);
 
 if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
   throw new Error("Root element not found. Did you forget to add it to your index.html? Or maybe the id attribute got misspelled?");

@@ -6,7 +6,7 @@ import Card from '../components/Card';
 
 import Newsletter from './Newsletter';
 
-const supabase = createClient(import.meta.env.SUPABASE_URL, import.meta.env.SUPABASE_KEY);
+const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_KEY);
 
 const Portal: Component = () => {
     const navigate = useNavigate(); // Move inside the component
@@ -29,7 +29,7 @@ const Portal: Component = () => {
         if (newTab) newTab.focus();};
 
 const fetchEmails = async () => {
-  const supabase = createClient(import.meta.env.SUPABASE_URL, import.meta.env.SUPABASE_KEY);
+  const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_KEY);
   const { data, error } = await supabase
     .from('newsletter_emails')
     .select('email');

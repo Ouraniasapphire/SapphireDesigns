@@ -19,9 +19,9 @@ To run this project, add the following environment variables to your .env file
 
 
 ```env
-SUPABASE_KEY=SUPABASE API KEY
+VITE_SUPABASE_KEY=SUPABASE API KEY
 
-SUPABASE_URL=SUPABASE APP URL
+VITE_SUPABASE_URL=SUPABASE APP URL
 
 ZOHO_EMAIL=ZOHO EMAIL
 
