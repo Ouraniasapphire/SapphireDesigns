@@ -1,5 +1,3 @@
-/* src/components/Loading.css */
-
 .loading-overlay {
     position: fixed;
     top: 0;
@@ -36,11 +34,10 @@
     }
 }
 
-#Logo{
+#Logo {
     width: 384px;
     height: 384px;
     border-radius: 11px;
     background-image: url('./Sapphire-Designs.png');
     background-size: cover;
 }
-

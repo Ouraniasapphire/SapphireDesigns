@@ -31,7 +31,7 @@ ZOHO_PASS=ZOHO APP PASSWORD
 - Create a new Supabase table named 'newsletter_emails' and add the following,  
   
 |  Name      | Data Type  | 
-| --------   | -------    |
+| -----------| -----------|
 | id         | uuid       |
 | created_at | timestampz |
 | email      | text       |
