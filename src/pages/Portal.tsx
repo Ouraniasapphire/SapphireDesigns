@@ -32,7 +32,7 @@ const Portal: Component = () => {
         const { data, error } = await supabase
             .from('newsletter_emails')
             .select('email')
-            .eq('confirmed', true); // Removed extra semicolon
+            .eq('confirmed', true);
 
         if (error) {
             console.error('Error fetching newsletter emails:', error.message);

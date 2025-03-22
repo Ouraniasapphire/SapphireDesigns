@@ -1,6 +1,7 @@
 import './styles/App.css';
 import { A, useLocation } from '@solidjs/router';
 import { lazy, createSignal, createEffect, Show, Suspense, onCleanup, onMount } from 'solid-js';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import Card from './components/Card';
 
 const Loading = lazy(() => import('./components/Loader'));
@@ -66,6 +67,7 @@ const App = (props) => {
     } else {
         return (
             <>
+                <SpeedInsights />
                 <Suspense fallback={<div>Loading...</div>}>
                     <Show when={loading()}>
                         <Loading />
