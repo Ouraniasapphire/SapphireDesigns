@@ -30,21 +30,42 @@ const About: Component = () => {
         }
     };
 
-    const RegisterEmail: Component = () => {
+    const RegisterEmail = () => {
         const [email, setEmail] = createSignal('');
+        const [loading, setLoading] = createSignal(false);
+
+        const generateToken = () => crypto.randomUUID(); // Generate a unique token
 
         const handleSubmit = async (e) => {
             e.preventDefault();
+            setLoading(true);
+
+            const token = generateToken();
+
             const { data, error } = await supabase
                 .from('newsletter_emails')
-                .insert([{ email: email() }]);
+                .insert([{ email: email(), confirmation_token: token, confirmed: false }]);
 
             if (error) {
-                alert('Error submitting email: ' + error.message);
+                if (error.code === '23505') {
+                    alert('Email already exists');
+                } else {
+                    alert('Error submitting email: ' + error.message);
+                }
             } else {
-                alert('Email submitted successfully!');
-                setEmail(''); // Clear the input field
+                alert('Email submitted successfully! Check your inbox for confirmation.');
+
+                // Send email using Vercel API
+                await fetch('/api/send-confirmation', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: email(), token }),
+                });
+
+                setEmail('');
             }
+
+            setLoading(false);
         };
 
         return (
@@ -61,12 +82,14 @@ const About: Component = () => {
                             value={email()}
                             onInput={(e) => setEmail(e.target.value)}
                             required
+                            placeholder='Enter your email!'
                         />
                         <button
                             class='box-shadow flex'
                             id='about-button'
                             style='width: 5rem !important'
                             type='submit'
+                            disabled={loading()}
                         >
                             <span class='center'>
                                 <img src='svgs/mail.svg' class='icon' alt='Vercel' />

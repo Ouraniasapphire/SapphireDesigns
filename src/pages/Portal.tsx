@@ -30,7 +30,10 @@ const Portal: Component = () => {
     };
 
     const fetchEmails = async () => {
-        const { data, error } = await supabase.from('newsletter_emails').select('email');
+        const { data, error } = await supabase
+            .from('newsletter_emails')
+            .select('email')
+            .eq('confirmed', true);;
 
         if (error) {
             console.error('Error fetching newsletter emails:', error);
