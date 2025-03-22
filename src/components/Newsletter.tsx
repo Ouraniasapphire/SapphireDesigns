@@ -1,14 +1,10 @@
 import { createSignal, Component } from 'solid-js';
-import { createClient } from '@supabase/supabase-js';
+import { supabase } from '../supabaseClient';
 
 const Newsletter: Component = () => {
     const [title, setTitle] = createSignal('');
     const [htmlContent, setHtmlContent] = createSignal('');
     const [loading, setLoading] = createSignal(false);
-    const supabase = createClient(
-        import.meta.env.VITE_SUPABASE_URL,
-        import.meta.env.VITE_SUPABASE_KEY
-    );
 
     const handleSendEmail = async () => {
         setLoading(true);

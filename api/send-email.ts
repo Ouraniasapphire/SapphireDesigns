@@ -13,10 +13,9 @@ export default async function handler(req, res) {
         port: 465, // SSL port
         secure: true, // Use SSL
         auth: {
-            user: process.env.ZOHO_EMAIL, 
+            user: process.env.ZOHO_EMAIL,
             pass: process.env.ZOHO_PASS,
         },
-        
     });
 
     try {

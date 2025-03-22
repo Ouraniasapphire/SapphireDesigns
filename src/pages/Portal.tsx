@@ -1,12 +1,10 @@
 import type { Component } from 'solid-js';
 import { createSignal, createResource, onMount } from 'solid-js';
-import { createClient } from '@supabase/supabase-js';
+import { supabase } from '../supabaseClient';
 import { useNavigate } from '@solidjs/router';
 import Card from '../components/Card';
 
-import Newsletter from './Newsletter';
-
-const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_KEY);
+import Newsletter from '../components/Newsletter';
 
 const Portal: Component = () => {
     const navigate = useNavigate(); // Move inside the component
@@ -32,10 +30,6 @@ const Portal: Component = () => {
     };
 
     const fetchEmails = async () => {
-        const supabase = createClient(
-            import.meta.env.VITE_SUPABASE_URL,
-            import.meta.env.VITE_SUPABASE_KEY
-        );
         const { data, error } = await supabase.from('newsletter_emails').select('email');
 
         if (error) {

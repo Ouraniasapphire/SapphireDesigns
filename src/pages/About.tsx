@@ -1,6 +1,6 @@
 import type { Component } from 'solid-js';
 import { createSignal } from 'solid-js';
-import { createClient } from '@supabase/supabase-js';
+import { supabase } from '../supabaseClient';
 import Card from '../components/Card';
 
 const About: Component = () => {
@@ -32,10 +32,6 @@ const About: Component = () => {
 
     const RegisterEmail: Component = () => {
         const [email, setEmail] = createSignal('');
-        const supabase = createClient(
-            import.meta.env.VITE_SUPABASE_URL,
-            import.meta.env.VITE_SUPABASE_KEY
-        );
 
         const handleSubmit = async (e) => {
             e.preventDefault();

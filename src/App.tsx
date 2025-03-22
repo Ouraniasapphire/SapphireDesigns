@@ -25,7 +25,7 @@ const App = (props) => {
         }
     };
 
-    let timeout;
+    let timeout: string | number | NodeJS.Timeout;
 
     onMount(() => {
         window.addEventListener('online', updateOnlineStatus);
@@ -52,57 +52,53 @@ const App = (props) => {
         onCleanup(() => clearTimeout(timeout));
     });
 
-    return (
-        <>
-            <Suspense fallback={<div>Loading...</div>}>
-                <Show when={loading()}>
-                    <Loading />
-                </Show>
-
-                <Show when={!isOnline()}>
-                    <div class='offline-overlay center-content'>
-                        <Card
-                            style={{ 'text-align': 'center', 'justify-items': 'center' }}
-                            id='card'
-                        >
-                            <div
-                                class='grid-layout'
-                                style='align-items: center; justify-items: center;'
-                            >
-                                <img src='/Sapphire-Designs.png' id='image-card' alt='Logo' />
-                                <span id='pricing-header'> You are offline! </span>
-                            </div>
-                        </Card>
+    if (!isOnline()) {
+        return (
+            <div class='offline-overlay center-content'>
+                <Card style={{ 'text-align': 'center', 'justify-items': 'center' }} id='card'>
+                    <div class='grid-layout' style='align-items: center; justify-items: center;'>
+                        <img src='/Sapphire-Designs.png' id='image-card' alt='Logo' />
+                        <span id='pricing-header'> You are offline! </span>
                     </div>
-                </Show>
+                </Card>
+            </div>
+        );
+    } else {
+        return (
+            <>
+                <Suspense fallback={<div>Loading...</div>}>
+                    <Show when={loading()}>
+                        <Loading />
+                    </Show>
 
-                <main class='app background'>
-                    <nav class='navbar'>
-                        <div class='navbar-container'>
-                            <div class='navbar-left'>
-                                <img
-                                    src='/Sapphire-Designs.png'
-                                    alt='logo'
-                                    style='height: 2.5rem; width: auto;'
-                                />
-                                <span id='Name'>
-                                    <A href='/'> Sapphire Designs </A>
-                                </span>
+                    <main class='app background'>
+                        <nav class='navbar'>
+                            <div class='navbar-container'>
+                                <div class='navbar-left'>
+                                    <img
+                                        src='/Sapphire-Designs.png'
+                                        alt='logo'
+                                        style='height: 2.5rem; width: auto;'
+                                    />
+                                    <span id='Name'>
+                                        <A href='/'> Sapphire Designs </A>
+                                    </span>
+                                </div>
+
+                                <div class='navbar-right'>
+                                    <A href='/about'>About</A>
+                                    <A href='/gallery'>Gallery</A>
+                                    <A href='/pricing'>Pricing</A>
+                                </div>
                             </div>
+                        </nav>
 
-                            <div class='navbar-right'>
-                                <A href='/about'>About</A>
-                                <A href='/gallery'>Gallery</A>
-                                <A href='/pricing'>Pricing</A>
-                            </div>
-                        </div>
-                    </nav>
-
-                    {props.children}
-                </main>
-            </Suspense>
-        </>
-    );
+                        {props.children}
+                    </main>
+                </Suspense>
+            </>
+        );
+    }
 };
 
 export default App;

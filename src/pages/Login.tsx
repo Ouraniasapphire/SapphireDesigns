@@ -1,14 +1,10 @@
 import { createSignal } from 'solid-js';
 import type { Component } from 'solid-js';
 import { useNavigate, A } from '@solidjs/router';
-import { createClient } from '@supabase/supabase-js';
+import { supabase } from '../supabaseClient';
 import Card from '../components/Card';
 
 const Login: Component = () => {
-    const supabase = createClient(
-        import.meta.env.VITE_SUPABASE_URL,
-        import.meta.env.VITE_SUPABASE_KEY
-    );
     const navigate = useNavigate();
     const [email, setEmail] = createSignal('');
     const [password, setPassword] = createSignal('');
