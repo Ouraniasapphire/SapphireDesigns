@@ -28,18 +28,18 @@ const Portal: Component = () => {
         const newTab = window.open(url, '_blank');
         if (newTab) newTab.focus();
     };
-
     const fetchEmails = async () => {
         const { data, error } = await supabase
             .from('newsletter_emails')
             .select('email')
-            .eq('confirmed', true);;
+            .eq('confirmed', true); // Removed extra semicolon
 
         if (error) {
-            console.error('Error fetching newsletter emails:', error);
+            console.error('Error fetching newsletter emails:', error.message);
             return [];
         }
-        return data.map((row) => row.email);
+
+        return data ? data.map((row) => row.email) : [];
     };
 
     const [emails] = createResource(fetchEmails);

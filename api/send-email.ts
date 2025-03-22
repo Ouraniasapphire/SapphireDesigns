@@ -22,10 +22,10 @@ export default async function handler(req, res) {
         // Send email to each recipient
         for (const recipient of recipients) {
             await transporter.sendMail({
-                from: `${process.env.ZOHO_EMAIL}`, // Sender address
-                to: recipient, // Recipient address
-                subject: title, // Email subject
-                html: htmlContent, // HTML email content
+                from: `${process.env.ZOHO_EMAIL}`,
+                to: recipient, 
+                subject: title, 
+                html: htmlContent, 
             });
         }
 
