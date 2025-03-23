@@ -14,7 +14,7 @@ import Debug from './pages/Debug';
 import Login from './pages/Login';
 import Portal from './pages/Portal';
 import Sapphire from './pages/Sapphire';
-import Confirmed from './pages/confirmed';
+import Confirmed from './pages/Confrimed';
 
 const root = document.getElementById('root');
 

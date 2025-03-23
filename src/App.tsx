@@ -2,6 +2,7 @@ import './styles/App.css';
 import { A, useLocation } from '@solidjs/router';
 import { lazy, createSignal, createEffect, Show, Suspense, onCleanup, onMount } from 'solid-js';
 import Card from './components/Card';
+import Navbar from './components/Navbar';
 
 const Loading = lazy(() => import('./components/Loader'));
 
@@ -72,27 +73,7 @@ const App = (props) => {
                     </Show>
 
                     <main class='app background'>
-                        <nav class='navbar'>
-                            <div class='navbar-container'>
-                                <div class='navbar-left'>
-                                    <img
-                                        src='/Sapphire-Designs.png'
-                                        alt='logo'
-                                        style='height: 2.5rem; width: auto;'
-                                    />
-                                    <span id='Name'>
-                                        <A href='/'> Sapphire Designs </A>
-                                    </span>
-                                </div>
-
-                                <div class='navbar-right'>
-                                    <A href='/about'>About</A>
-                                    <A href='/gallery'>Gallery</A>
-                                    <A href='/pricing'>Pricing</A>
-                                </div>
-                            </div>
-                        </nav>
-
+                        <Navbar />
                         {props.children}
                     </main>
                 </Suspense>

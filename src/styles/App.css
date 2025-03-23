@@ -338,11 +338,6 @@ iframe {
         justify-content: center;
     }
 
-    .navbar {
-        position: fixed;
-        bottom: 0;
-    }
-
     /* Loading logo */
     #Logo {
         width: 256px;

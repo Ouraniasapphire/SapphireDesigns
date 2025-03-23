@@ -1,5 +1,6 @@
 import nodemailer from 'nodemailer';
 
+
 export default async function handler(req, res) {
     if (req.method !== 'POST') {
         return res.status(405).json({ message: 'Method not allowed' });
@@ -26,8 +27,8 @@ export default async function handler(req, res) {
             to: email, // Recipient address
             subject: 'Confirm Your Subscription',
             html: `
-                <h2>Confirm Your Subscription</h2>
-                <p>Click the link below to confirm your subscription:</p>
+                <h2>Confirm Your Subscription to Sapphire Designs newsletter</h2>
+                <p>Click the link below to confirm:</p>
                 <a href="${confirmationLink}" style="color: #0084FF; font-weight: bold;">Confirm Subscription</a>
                 <p>If you did not request this, please ignore this email.</p>
             `,
