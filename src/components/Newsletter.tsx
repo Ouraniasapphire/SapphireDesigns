@@ -1,6 +1,27 @@
 import { createSignal, Component } from 'solid-js';
 import { supabase } from '../supabaseClient';
 
+/**
+ * Newsletter component for managing and sending email newsletters.
+ *
+ * This component allows users to input an email title and HTML content,
+ * and sends the composed email to all confirmed recipients in the
+ * 'newsletter_emails' table of the Supabase database.
+ *
+ * Signals:
+ * - title: Holds the email title.
+ * - htmlContent: Holds the HTML content of the email.
+ * - loading: Represents the loading state while sending emails.
+ *
+ * Functions:
+ * - handleSendEmail: Asynchronously handles the process of fetching
+ *   confirmed recipient emails from Supabase, and sending the email
+ *   using the '/api/send-email' endpoint.
+ *
+ * The component renders a form to input the email title and HTML content,
+ * along with a button to trigger the email sending process.
+ */
+
 const Newsletter: Component = () => {
     const [title, setTitle] = createSignal('');
     const [htmlContent, setHtmlContent] = createSignal('');

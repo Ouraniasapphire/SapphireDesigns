@@ -1,5 +1,21 @@
 import nodemailer from 'nodemailer';
 
+/**
+ * Handles the sending of confirmation emails using Nodemailer and Zoho Mail.
+ * 
+ * This function serves as an HTTP POST endpoint that expects a request body with the following properties:
+ * - `email`: The recipient's email address.
+ * - `token`: A unique token to be appended to the confirmation link.
+ * 
+ * If the request method is not POST, it responds with a 405 status code.
+ * 
+ * The function generates a confirmation link using the provided token and sends a confirmation email to the specified email address.
+ * On success, it responds with a 200 status code indicating that the confirmation email was sent successfully.
+ * If an error occurs during the sending process, it logs the error and responds with a 500 status code.
+ * 
+ * @param req - The HTTP request object containing the email and token in the body.
+ * @param res - The HTTP response object used to send back the appropriate response.
+ */
 
 export default async function handler(req, res) {
     if (req.method !== 'POST') {

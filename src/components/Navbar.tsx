@@ -1,9 +1,8 @@
-import { createSignal } from 'solid-js';
 import { A } from '@solidjs/router';
 
 const Navbar = () => {
     return (
-        <nav class='navbar'>
+        <nav class='navbar box-shadow'>
             <div class='navbar-container'>
                 <div class='navbar-left'>
                     <img
