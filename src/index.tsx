@@ -15,6 +15,7 @@ import Login from './pages/Login';
 import Portal from './pages/Portal';
 import Sapphire from './pages/Sapphire';
 import Confirmed from './pages/Confrimed';
+import Repo from './pages/Repo';
 
 const root = document.getElementById('root');
 
@@ -35,6 +36,7 @@ render(
             <Route path='*' component={NotFound} />
             <Route path='/sapphire' component={Sapphire} />
             <Route path='/confirmed' component={Confirmed} />
+            <Route path='/repo' component={Repo} />
 
             <SupabaseProvider client={supabase}>
                 <Route path='/login' component={Login} />

@@ -67,7 +67,7 @@ const App = (props) => {
     } else {
         return (
             <>
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={<Loading />}>
                     <Show when={loading()}>
                         <Loading />
                     </Show>

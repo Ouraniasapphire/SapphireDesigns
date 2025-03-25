@@ -16,7 +16,7 @@
 .navbar-container {
     width: 95%;
     display: flex;
-    justify-content: space-between; /* Ensures left and right sections are far apart */
+    justify-content: space-between;
     align-items: center;
     height: 100%;
 }
@@ -55,4 +55,47 @@
 #Nav-Logo {
     height: 3rem;
     width: auto;
+}
+
+.menu-button {
+    background: none;
+    border: none;
+
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-button img {
+    height: 2rem;
+}
+
+.popup-menu {
+    position: absolute;
+    top: 3.5rem; /* Adjust based on navbar height */
+    right: 0.5rem;
+    background: white;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    z-index: 1001;
+    align-items: start;
+}
+
+.popup-menu a {
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 10px;
+    display: block;
+}
+
+.popup-menu a:hover {
+    color: var(--sapphire);
+    border-radius: 3px;
 }
