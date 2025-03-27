@@ -28,13 +28,35 @@ ZOHO_EMAIL=ZOHO EMAIL
 
 ZOHO_PASS=ZOHO APP PASSWORD
 ```
-- Create a new Supabase table named 'newsletter_emails' and add the following,  
-  
-|  Name      | Data Type  | 
-| -----------| -----------|
-| id         | uuid       |
-| created_at | timestampz |
-| email      | text       |
+
+## Database 
+
+- Enter this sql into your database,
+
+```sql 
+create table public.newsletter_emails (
+  id uuid not null default gen_random_uuid (),
+  created_at timestamp with time zone not null default now(),
+  email text not null,
+  confirmed boolean null default false,
+  confirmation_token text null,
+  constraint newsletter_emails_pkey primary key (id),
+  constraint newsletter_emails_confirmed_token_key unique (confirmation_token),
+  constraint newsletter_emails_email_key unique (email)
+) TABLESPACE pg_default;
+```
+
+Or 
+
+- Create a new Supabase table named 'newsletter_emails' and add the following, 
+
+| Name              | Data Type  | Default value    |
+| ------------------| -----------| -----------------|
+| id                | uuid       | gen_random_uuid()|
+| created_at        | timestampz | now()            |
+| email             | text       |                  |
+| confirmation_token| text       |                  |
+| confirmed         | bool       | false            |
 
 ## Available Scripts
 

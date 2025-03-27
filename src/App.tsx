@@ -1,5 +1,4 @@
 import './styles/App.css';
-import { A, useLocation } from '@solidjs/router';
 import { lazy, createSignal, createEffect, Show, Suspense, onCleanup, onMount } from 'solid-js';
 import Card from './components/Card';
 import Navbar from './components/Navbar';
@@ -8,7 +7,6 @@ const Loading = lazy(() => import('./components/Loader'));
 
 const App = (props) => {
     const [loading, setLoading] = createSignal(false);
-    const location = useLocation();
     const [isOnline, setIsOnline] = createSignal(navigator.onLine);
     const [wasOffline, setWasOffline] = createSignal(false); // New state to track if we were offline
 
@@ -18,7 +16,7 @@ const App = (props) => {
 
         if (currentOnlineStatus) {
             if (wasOffline()) {
-                window.location.reload(); // Reload the page if we were offline and are back online
+                window.location.reload(); 
             }
             setWasOffline(false); // Reset the flag when online
         } else {
